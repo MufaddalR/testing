@@ -45,7 +45,7 @@
             "Type": "Pass",
             "End": true
         },
-        "Approve Application": {
+        "Approve Application": { 
             "Type": "Pass",
             "End": true
         }
