@@ -87,9 +87,12 @@ Resources:
       Environment:
         Variables:
           APPLICATIONS_TABLE_NAME: !Ref ApplicationsTable
+          APPLICATION_PROCESSING_STEP_FUNCTION_ARN: !Ref ApplicationProcessingStateMachine
       Policies:
         - DynamoDBCrudPolicy:
             TableName: !Ref ApplicationsTable
+        - StepFunctionsExecutionPolicy:
+            StateMachineName: !GetAtt ApplicationProcessingStateMachine.Name
 
   ApplicationsTable:
     Type: 'AWS::DynamoDB::Table'
